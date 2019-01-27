@@ -5,10 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
@@ -17,9 +14,9 @@ import java.sql.Timestamp;
 @Data
 public class UserComment {
     @Id
-    private String commentId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long commentId;
     @ManyToOne
-    @JoinColumn(name = "USER_ID")
     private User user;
     @NonNull
     private Timestamp createdAt;

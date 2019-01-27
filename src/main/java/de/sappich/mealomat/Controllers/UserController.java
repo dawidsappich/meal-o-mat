@@ -2,36 +2,32 @@ package de.sappich.mealomat.Controllers;
 
 import de.sappich.mealomat.Entities.User;
 import de.sappich.mealomat.Entities.UserComment;
-import de.sappich.mealomat.Repositories.UserCommentRepository;
-import de.sappich.mealomat.Services.UserService;
+import de.sappich.mealomat.Repositories.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.sql.Timestamp;
-import java.util.UUID;
+import java.util.Optional;
 
 @RestController
 public class UserController {
 
-    private final UserCommentRepository commentRepository;
-    private UserService userService;
+    private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    public UserController(UserService userService, UserCommentRepository commentRepository) {
-        this.userService = userService;
-        this.commentRepository = commentRepository;
-    }
+    private UserRepository userRepository;
 
-    @RequestMapping(value = "/usercomment", method = RequestMethod.POST)
-    @ResponseStatus(HttpStatus.OK)
-    public void saveUser(@RequestBody User user) {
-        UserComment userComment = new UserComment();
-        User foundUser = this.userService.findUser(user);
-        userComment.setUser(foundUser);
-        userComment.setCommentId(UUID.randomUUID().toString());
-        userComment.setContent("created via REST API");
-        userComment.setCreatedAt(new Timestamp(System.currentTimeMillis()));
-        this.commentRepository.save(userComment);
+    @PostMapping("/usercomment")
+    public void createUserComment(@RequestBody UserComment userComment) {
+        LOGGER.info(userComment.toString());
+        User user = userComment.getUser();
+        User foundUser = this.userRepository.findById(user.getId()).get();
+        LOGGER.info("found user:" + foundUser);
+        foundUser.setName(user.getName());
+        foundUser.setIsActive(user.getIsActive());
+        LOGGER.info("changed user:" + foundUser);
     }
 }

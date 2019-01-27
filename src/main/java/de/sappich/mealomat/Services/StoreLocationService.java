@@ -17,8 +17,8 @@ public class StoreLocationService {
         this.storeLocationRepository = storeLocationRepository;
     }
 
-    public StoreLocation findStore(String uuid) {
-        Optional<StoreLocation> foundStoreLocation = this.storeLocationRepository.findById(uuid);
+    public StoreLocation findStore(Long storeId) {
+        Optional<StoreLocation> foundStoreLocation = this.storeLocationRepository.findById(storeId);
         return foundStoreLocation.get();
     }
 }
