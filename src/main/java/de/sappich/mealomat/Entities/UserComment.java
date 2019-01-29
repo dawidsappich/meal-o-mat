@@ -7,6 +7,7 @@ import lombok.NonNull;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Entity
 @NoArgsConstructor
@@ -19,6 +20,6 @@ public class UserComment {
     @ManyToOne
     private User user;
     @NonNull
-    private Timestamp createdAt;
+    private LocalDateTime createdAt;
     private String content;
 }

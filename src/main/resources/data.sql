@@ -1,6 +1,6 @@
 -- noinspection SqlNoDataSourceInspectionForFile
 
-INSERT INTO USER (name, is_active, created_at)
+INSERT INTO USER (username, is_active, created_at)
 VALUES ('Dawid', 1, '2019-01-25T00:00:00');
 
 insert into store_location (city, house_nr, latitude, longitude, street)

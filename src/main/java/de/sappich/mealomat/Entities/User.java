@@ -1,11 +1,12 @@
 package de.sappich.mealomat.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -16,12 +17,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NonNull
-    private String name;
+    private String username;
     @NonNull
     private Boolean isActive;
     @NonNull
-    private Timestamp createdAt;
+    private LocalDateTime createdAt;
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<UserComment> comments;
     
 }
