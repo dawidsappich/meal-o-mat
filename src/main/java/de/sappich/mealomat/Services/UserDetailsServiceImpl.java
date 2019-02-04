@@ -12,14 +12,11 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class UserService implements UserDetailsService {
-
-    private UserRepository userRepository;
+public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+    private UserRepository userRepository;
+
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -34,4 +31,6 @@ public class UserService implements UserDetailsService {
         User user = new User(email, password, authorities);
         return this.userRepository.save(user);
     }
+
+
 }

@@ -24,7 +24,7 @@ public class User {
     private List<UserComment> comments;
 
 
-    @ManyToMany(cascade = {
+    @ManyToMany(fetch = FetchType.EAGER,cascade = {
             CascadeType.PERSIST, CascadeType.MERGE
     })
     @JoinTable(
@@ -34,17 +34,15 @@ public class User {
     )
     private List<Authority> authorities = new ArrayList<>();
 
-
-
-
-    public User(String email, String password, Set<Authority> authorities) {
+    public User(String email, String password, boolean isActive, Set<Authority> authorities) {
         this.email = email;
         this.password = password;
+        this.isActive = isActive;
         this.authorities.addAll(authorities);
     }
 
     public User(String email, String password, Authority ... authorities) {
-        this(email, password, new HashSet<>(Arrays.asList(authorities)));
+        this(email, password, true, new HashSet<>(Arrays.asList(authorities)));
     }
 
 }

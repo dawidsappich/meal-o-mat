@@ -1,6 +1,5 @@
 package de.sappich.mealomat.Services;
 
-import de.sappich.mealomat.Entities.Authority;
 import de.sappich.mealomat.Entities.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
