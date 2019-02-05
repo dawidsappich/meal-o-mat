@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -23,12 +24,29 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsServiceImpl userService;
 
-    /**
-     * Ignore security for h2-console
-     */
     @Override
     public void configure(WebSecurity web) throws Exception {
+        // ignore security for h2 console
         web.ignoring().antMatchers("/h2-console/**");
+        // ignore security for swagger ui
+        web.ignoring().antMatchers("/swagger-ui.html**");
+
+    }
+
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+
+        // FIXME: enable CRSF when frontend (angular) is available
+        http.csrf().ignoringAntMatchers("/register/**");
+
+        // user HTTP Basic Authentication
+        http.httpBasic();
+
+        http.authorizeRequests()
+                .mvcMatchers("/register/**").permitAll()
+                .anyRequest().authenticated();
+
     }
 
     /**
@@ -55,9 +73,9 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter {
     @Transactional
     public ApplicationRunner applicationRunner() {
         return args -> {
-            Authority user = new Authority("ROLE_USER");
-            Authority admin = new Authority("ROLE_ADMIN");
-            User dawid = userService.createUser("dawid", passwordEncoder().encode("password"), user, admin);
+            Authority user = new Authority("USER");
+            Authority admin = new Authority("ADMIN");
+            User dawid = userService.saveUser("dawid", "password", user, admin);
             dawid.setAuthorities(Arrays.asList(user, admin));
             log.info(dawid.toString());
 

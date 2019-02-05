@@ -1,5 +1,6 @@
 package de.sappich.mealomat.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -16,11 +17,13 @@ import java.util.Set;
 public class Authority {
 
     @Id @GeneratedValue
+    @JsonIgnore
     private Long id;
 
     private String authority;
 
     @ManyToMany(mappedBy = "authorities")
+    @JsonIgnore
     private List<User> users = new ArrayList<>();
 
 

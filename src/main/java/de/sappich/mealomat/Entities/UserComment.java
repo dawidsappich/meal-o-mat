@@ -1,5 +1,6 @@
 package de.sappich.mealomat.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,6 +18,7 @@ public class UserComment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long commentId;
     @ManyToOne
+    @JsonIgnore
     private User user;
     @NonNull
     private LocalDateTime createdAt;
