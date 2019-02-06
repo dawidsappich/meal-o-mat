@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @Entity
 @NoArgsConstructor
@@ -11,8 +12,8 @@ import javax.persistence.*;
 public class MealChoice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long mealId;
-    @OneToOne
+    private Long id;
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "storeId")
     private StoreLocation storeLocation;
     private String name;

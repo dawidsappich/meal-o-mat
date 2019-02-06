@@ -38,7 +38,7 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         // FIXME: enable CRSF when frontend (angular) is available
-        http.csrf().ignoringAntMatchers("/register/**");
+        http.csrf().disable();
 
         // user HTTP Basic Authentication
         http.httpBasic();

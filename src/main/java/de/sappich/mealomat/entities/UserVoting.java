@@ -13,7 +13,7 @@ import java.sql.Timestamp;
 public class UserVoting {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userVotingId;
+    private Long id;
     @ManyToOne
     @NonNull
     private User user;
