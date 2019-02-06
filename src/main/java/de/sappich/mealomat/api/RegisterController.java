@@ -1,11 +1,12 @@
-package de.sappich.mealomat.Controllers;
+package de.sappich.mealomat.api;
 
-import de.sappich.mealomat.Entities.Authority;
-import de.sappich.mealomat.Entities.User;
-import de.sappich.mealomat.Repositories.UserRepository;
-import de.sappich.mealomat.Utils.ApplicationCode;
-import de.sappich.mealomat.Utils.ApplicationResponse;
-import de.sappich.mealomat.Services.UserDetailsServiceImpl;
+import de.sappich.mealomat.api.viewmodel.UserViewModel;
+import de.sappich.mealomat.entities.Authority;
+import de.sappich.mealomat.entities.User;
+import de.sappich.mealomat.repositories.UserRepository;
+import de.sappich.mealomat.utils.ApplicationCode;
+import de.sappich.mealomat.utils.ApplicationResponse;
+import de.sappich.mealomat.services.UserDetailsServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,10 +33,10 @@ public class RegisterController {
 
     @PostMapping("register")
     @ApiOperation(value = "register user", response = ApplicationResponse.class)
-    public ResponseEntity<ApplicationResponse> createUser(@RequestBody User user) {
+    public ResponseEntity<ApplicationResponse> createUser(@RequestBody UserViewModel userview) {
 
         // make sure the email is not already registered
-        Optional<User> foundUser = this.userRepository.findByEmailIgnoreCase(user.getEmail());
+        Optional<User> foundUser = this.userRepository.findByEmailIgnoreCase(userview.getEmail());
 
 
         if (foundUser.isPresent()) {
@@ -54,8 +55,11 @@ public class RegisterController {
                     .body(response);
         }
 
-
+        User user = new User();
         Authority role_user = new Authority("ROLE_USER");
+
+        user.setEmail(userview.getEmail());
+        user.setPassword(userview.getPassword());
         // every user is set to active
         user.setIsActive(true);
         // every registered user has the role USER

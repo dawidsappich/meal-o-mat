@@ -1,6 +1,6 @@
-package de.sappich.mealomat.Repositories;
+package de.sappich.mealomat.repositories;
 
-import de.sappich.mealomat.Entities.User;
+import de.sappich.mealomat.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 

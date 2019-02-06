@@ -1,8 +1,8 @@
-package de.sappich.mealomat.Configurations;
+package de.sappich.mealomat.configurations;
 
-import de.sappich.mealomat.Entities.Authority;
-import de.sappich.mealomat.Entities.User;
-import de.sappich.mealomat.Services.UserDetailsServiceImpl;
+import de.sappich.mealomat.entities.Authority;
+import de.sappich.mealomat.entities.User;
+import de.sappich.mealomat.services.UserDetailsServiceImpl;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;

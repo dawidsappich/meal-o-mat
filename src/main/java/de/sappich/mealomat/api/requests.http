@@ -1,0 +1,29 @@
+
+# API HealthCheck
+
+GET {{host-url}}//health-check/ping
+Authorization: Basic dawid password
+
+###
+
+# API UserController
+
+GET {{host-url}}/user/10
+Accept: application/json
+Authorization: Basic dawid password
+
+###
+
+# API RegisterController
+
+POST {{host-url}}/register
+Accept: application/json
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{
+  "user": "hans",
+  "password": "password"
+}
+
+###

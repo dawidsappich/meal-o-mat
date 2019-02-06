@@ -1,4 +1,4 @@
-package de.sappich.mealomat.Utils;
+package de.sappich.mealomat.utils;
 
 import lombok.Getter;
 import lombok.Setter;

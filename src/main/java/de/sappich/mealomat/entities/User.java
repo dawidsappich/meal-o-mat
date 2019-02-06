@@ -1,8 +1,7 @@
-package de.sappich.mealomat.Entities;
+package de.sappich.mealomat.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;

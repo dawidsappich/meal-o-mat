@@ -1,7 +1,7 @@
 package de.sappich.mealomat;
 
-import de.sappich.mealomat.Entities.User;
-import de.sappich.mealomat.Repositories.UserRepository;
+import de.sappich.mealomat.entities.User;
+import de.sappich.mealomat.repositories.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

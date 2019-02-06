@@ -1,4 +1,4 @@
-package de.sappich.mealomat.Entities;
+package de.sappich.mealomat.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;

@@ -1,0 +1,154 @@
+GET http://localhost:8080/api/v1/user/10
+Authorization: Basic dawid password
+Accept: application/json
+
+<> 2019-02-06T035714.200.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Authorization: Basic dawid password
+Accept: application/json
+Content-Type: application/json
+
+{
+  "user": "hans",
+  "password": "password"
+}
+
+<> 2019-02-06T035701.400.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Authorization: Basic dawid password
+Accept: application/json
+Content-Type: application/json
+
+{
+  "user": "hans",
+  "password": "password"
+}
+
+<> 2019-02-06T035655.200.json
+
+###
+
+GET http://localhost:8080/api/v1/user/1
+Authorization: Basic dawid password
+Accept: application/json
+
+<> 2019-02-06T035647.200.json
+
+###
+
+GET http://localhost:8080/api/v1/health-check/ping
+Authorization: Basic dawid password
+
+<> 2019-02-06T033727.200.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Authorization: Basic dawid password
+Accept: application/json
+Content-Type: application/json
+
+{
+  "user": "hans",
+  "password": "password"
+}
+
+<> 2019-02-06T033712.200.json
+
+###
+
+GET http://localhost:8080/api/v1/user/1
+Authorization: Basic dawid password
+Accept: application/json
+
+<> 2019-02-06T033704.200.json
+
+###
+
+GET http://localhost:8080/api/v1/user/1
+Authorization: Basic dawid password
+Accept: application/json
+
+<> 2019-02-06T033120.200.json
+
+###
+
+GET http://localhost:8080/api/v1/user/3
+Authorization: Basic dawid password
+Accept: application/json
+
+<> 2019-02-06T033113.200.json
+
+###
+
+GET http://localhost:8080/api/v1/user/2
+Authorization: Basic dawid password
+Accept: application/json
+
+<> 2019-02-06T033049.200.json
+
+###
+
+GET http://localhost:8080/api/v1/user/1
+Authorization: Basic dawid password
+Accept: application/json
+
+<> 2019-02-06T033041.200.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Authorization: Basic dawid password
+Accept: application/json
+Content-Type: application/json
+
+{
+  "user": "hans",
+  "password": "password"
+}
+
+<> 2019-02-06T032448.400.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Authorization: Basic dawid password
+Accept: application/json
+Content-Type: application/json
+
+{
+  "user": "hans",
+  "password": "password"
+}
+
+<> 2019-02-06T032442.200.json
+
+###
+
+GET http://localhost:8080/api/v1/user/1
+Authorization: Basic dawid password
+Accept: application/json
+
+<> 2019-02-06T032222.200.json
+
+###
+
+GET http://localhost:8080/api/v1/health-check/ping
+Authorization: Basic dawid password
+
+<> 2019-02-06T032025.200.json
+
+###
+
+GET http://localhost:8080/api/v1/health-check/ping
+
+<> 2019-02-06T030920.401.json
+
+###
+

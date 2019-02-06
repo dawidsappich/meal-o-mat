@@ -1,4 +1,4 @@
-package de.sappich.mealomat.Entities;
+package de.sappich.mealomat.entities;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

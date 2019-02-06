@@ -1,4 +1,4 @@
-package de.sappich.mealomat.Utils;
+package de.sappich.mealomat.utils;
 
 
 public enum ApplicationCode {

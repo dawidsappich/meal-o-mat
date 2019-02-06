@@ -1,10 +1,11 @@
-package de.sappich.mealomat.Controllers;
+package de.sappich.mealomat.api;
 
-import de.sappich.mealomat.Entities.User;
-import de.sappich.mealomat.Entities.UserComment;
-import de.sappich.mealomat.Repositories.UserCommentRepository;
-import de.sappich.mealomat.Repositories.UserRepository;
-import de.sappich.mealomat.Utils.ApplicationResponse;
+import de.sappich.mealomat.api.viewmodel.UserViewModel;
+import de.sappich.mealomat.entities.User;
+import de.sappich.mealomat.entities.UserComment;
+import de.sappich.mealomat.repositories.UserCommentRepository;
+import de.sappich.mealomat.repositories.UserRepository;
+import de.sappich.mealomat.utils.ApplicationResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 /**
- * GET  user/ping       cheep health check
  * GET  user/{userid}   get infos about user with provided userid
  * POST user/comment    create a comment
  */
@@ -28,17 +28,11 @@ public class UserController {
     @Autowired
     private UserCommentRepository userCommentRepository;
 
-    @GetMapping("ping")
-    @ApiOperation(value = "check if controller is alive", response = String.class)
-    public String pong() {
-        return String.format("[%s] works", this.getClass().getName());
-    }
-
     @GetMapping("{userId}")
-    @ApiOperation(value = "find existing user by userid", response = User.class)
-    public User findUserById(@PathVariable Long userId) {
+    @ApiOperation(value = "find email user by userid", response = String.class)
+    public String findEmailById(@PathVariable Long userId) {
         Optional<User> foundUser = this.userRepository.findById(userId);
-        return foundUser.orElse(new User());
+        return foundUser.isPresent() ? foundUser.get().getEmail() : "not found";
     }
 
     @PostMapping("comment")

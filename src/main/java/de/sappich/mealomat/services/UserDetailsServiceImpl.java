@@ -1,8 +1,8 @@
-package de.sappich.mealomat.Services;
+package de.sappich.mealomat.services;
 
-import de.sappich.mealomat.Entities.Authority;
-import de.sappich.mealomat.Entities.User;
-import de.sappich.mealomat.Repositories.UserRepository;
+import de.sappich.mealomat.entities.Authority;
+import de.sappich.mealomat.entities.User;
+import de.sappich.mealomat.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
