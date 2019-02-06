@@ -1,0 +1,57 @@
+# API MealController
+
+
+GET {{host-url}}/meal
+Authorization: Basic dawid password
+Accept: application/json
+
+###
+
+POST {{host-url}}/meal
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{
+  "name": "meal_one",
+  "displayName": "Awesome Meal",
+  "location": {
+    "city": "cologne",
+    "street": "bonner str.",
+    "houseNr": 222
+  }
+}
+
+###
+
+DELETE {{host-url}}/meal
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{}
+
+###
+
+DELETE {{host-url}}/meal/1
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{}
+
+###
+
+PATCH {{host-url}}/meal
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{
+  "id": 4,
+  "name": "updated_meal",
+  "displayName": "UPDATED",
+  "storeLocation": {
+    "street": 999,
+    "city": "dortmund",
+    "houseNr": 444
+  }
+}
+
+###

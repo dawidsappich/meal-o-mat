@@ -1,9 +1,9 @@
 package de.sappich.mealomat.api;
 
 import de.sappich.mealomat.api.viewmodel.MealViewModel;
-import de.sappich.mealomat.entities.MealChoice;
+import de.sappich.mealomat.entities.Meal;
 import de.sappich.mealomat.entities.StoreLocation;
-import de.sappich.mealomat.repositories.MealChoiceRepository;
+import de.sappich.mealomat.repositories.MealRepository;
 import de.sappich.mealomat.utils.ApplicationCode;
 import de.sappich.mealomat.utils.ApplicationResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +19,10 @@ import java.util.Optional;
 public class MealController {
 
     @Autowired
-    private MealChoiceRepository repository;
+    private MealRepository repository;
 
     @GetMapping
-    public Collection<MealChoice> getAllMeals() {
+    public Collection<Meal> getAllMeals() {
         return this.repository.findAll();
     }
 
@@ -31,14 +31,14 @@ public class MealController {
 
         StoreLocation location = mealViewModel.getLocation();
 
-        MealChoice meal = new MealChoice();
+        Meal meal = new Meal();
         meal.setDisplayName(mealViewModel.getDisplayName());
         meal.setName(mealViewModel.getName());
         meal.setStoreLocation(location);
 
         repository.save(meal);
 
-        ApplicationResponse response = createResponse("meal created", ApplicationCode.OK);
+        ApplicationResponse response = ApplicationResponse.createResponse("meal created", ApplicationCode.OK);
         return ResponseEntity.ok(response);
     }
 
@@ -51,7 +51,7 @@ public class MealController {
         }
 
         this.repository.deleteById(mealId);
-        ApplicationResponse response = createResponse("meal deleted", ApplicationCode.OK);
+        ApplicationResponse response = ApplicationResponse.createResponse("meal deleted", ApplicationCode.OK);
         return ResponseEntity.ok(response);
     }
 
@@ -59,44 +59,31 @@ public class MealController {
     @DeleteMapping
     public ResponseEntity<ApplicationResponse> deleteAllMeals() {
         this.repository.deleteAllInBatch();
-        ApplicationResponse response = createResponse("all meals deleted!", ApplicationCode.OK);
+        ApplicationResponse response = ApplicationResponse.createResponse("all meals deleted!", ApplicationCode.OK);
         return ResponseEntity.ok(response);
     }
 
-    public ApplicationResponse createResponse(String message, ApplicationCode code) {
-        ApplicationResponse.Builder builder = new ApplicationResponse.Builder();
-        boolean isSuccess = false;
 
-        if (code.equals(ApplicationCode.OK)) {
-            isSuccess = true;
-        }
-
-        return builder.setMessage(message)
-                .setIsSuccess(isSuccess)
-                .setCode(code)
-                .setTime(LocalDateTime.now())
-                .build();
-    }
 
     @PatchMapping
-    public ResponseEntity<ApplicationResponse> updateMeal(@RequestBody MealChoice mealChoice) {
+    public ResponseEntity<ApplicationResponse> updateMeal(@RequestBody Meal meal) {
         // TODO: Validate input with Validator
-        Optional<ResponseEntity> result = checkIfExists(mealChoice.getId());
+        Optional<ResponseEntity> result = checkIfExists(meal.getId());
         if (result.isPresent()) {
             return result.get();
         }
 
-        this.repository.save(mealChoice);
-        ApplicationResponse response = createResponse("meal updated", ApplicationCode.OK);
+        this.repository.save(meal);
+        ApplicationResponse response = ApplicationResponse.createResponse("meal updated", ApplicationCode.OK);
         return ResponseEntity.ok(response);
     }
 
     public Optional<ResponseEntity> checkIfExists(Long mealId) {
         //check if meal exists
-        Optional<MealChoice> foundMeal = this.repository.findById(mealId);
+        Optional<Meal> foundMeal = this.repository.findById(mealId);
         // when not found than error
         if (foundMeal.isEmpty()) {
-            ApplicationResponse response = createResponse(String.format("meal with id %d not found", mealId), ApplicationCode.ERROR);
+            ApplicationResponse response = ApplicationResponse.createResponse(String.format("meal with id %d not found", mealId), ApplicationCode.ERROR);
             return Optional.of(ResponseEntity.badRequest().body(response));
         }
         return Optional.empty();

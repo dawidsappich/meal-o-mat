@@ -56,5 +56,20 @@ public class ApplicationResponse {
 
     }
 
+    public static ApplicationResponse createResponse(String message, ApplicationCode code) {
+        ApplicationResponse.Builder builder = new ApplicationResponse.Builder();
+        boolean isSuccess = false;
+
+        if (code.equals(ApplicationCode.OK)) {
+            isSuccess = true;
+        }
+
+        return builder.setMessage(message)
+                .setIsSuccess(isSuccess)
+                .setCode(code)
+                .setTime(LocalDateTime.now())
+                .build();
+    }
+
 
 }

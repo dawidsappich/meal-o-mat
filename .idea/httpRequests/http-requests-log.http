@@ -1,536 +1,50 @@
-GET http://localhost:8080/api/v1/meal
+GET http://localhost:8080/api/v1/vote
 Authorization: Basic dawid password
 Accept: application/json
 
-<> 2019-02-06T071454.200.json
+<> 2019-02-06T103937.200.json
 
 ###
 
-POST http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{
-  "name": "meal_one",
-  "displayName": "Awesome Meal",
-  "location": {
-    "city": "cologne",
-    "street": "bonner str.",
-    "houseNr": 222
-  }
-}
-
-<> 2019-02-06T071451.200.json
-
-###
-
-GET http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Accept: application/json
-
-<> 2019-02-06T071445.200.json
-
-###
-
-PATCH http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{
-  "id": 4,
-  "name": "updated_meal",
-  "displayName": "UPDATED",
-  "storeLocation": {
-    "street": 999,
-    "city": "dortmund",
-    "houseNr": 444
-  }
-}
-
-<> 2019-02-06T071440.200.json
-
-###
-
-GET http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Accept: application/json
-
-<> 2019-02-06T071408.200.json
-
-###
-
-PATCH http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{
-  "id": 4,
-  "name": "updated_meal",
-  "displayName": "UPDATED",
-  "storeLocation": {
-    "street": 999
-  }
-}
-
-<> 2019-02-06T071401.200.json
-
-###
-
-GET http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Accept: application/json
-
-<> 2019-02-06T071211.200.json
-
-###
-
-POST http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{
-  "name": "meal_one",
-  "displayName": "Awesome Meal",
-  "location": {
-    "city": "cologne",
-    "street": "bonner str.",
-    "houseNr": 222
-  }
-}
-
-<> 2019-02-06T071151.200.json
-
-###
-
-GET http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Accept: application/json
-
-<> 2019-02-06T071143.200.json
-
-###
-
-DELETE http://localhost:8080/api/v1/meal
+DELETE http://localhost:8080/api/v1/vote
 Authorization: Basic dawid password
 Content-Type: application/json
 
 {}
 
-<> 2019-02-06T071139.200.json
+<> 2019-02-06T103934.200.json
 
 ###
 
-POST http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{
-  "name": "meal_one",
-  "displayName": "Awesome Meal",
-  "location": {
-    "city": "cologne",
-    "street": "bonner str.",
-    "houseNr": 222
-  }
-}
-
-<> 2019-02-06T071133.200.json
-
-###
-
-GET http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Accept: application/json
-
-<> 2019-02-06T071124.200.json
-
-###
-
-DELETE http://localhost:8080/api/v1/meal/1
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{}
-
-<> 2019-02-06T071119.200.json
-
-###
-
-GET http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Accept: application/json
-
-<> 2019-02-06T071111.200.json
-
-###
-
-POST http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{
-  "name": "meal_one",
-  "displayName": "Awesome Meal",
-  "location": {
-    "city": "cologne",
-    "street": "bonner str.",
-    "houseNr": 222
-  }
-}
-
-<> 2019-02-06T071108.200.json
-
-###
-
-POST http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{
-  "name": "meal_one",
-  "displayName": "Awesome Meal",
-  "location": {
-    "city": "cologne",
-    "street": "bonner str.",
-    "houseNr": 222
-  }
-}
-
-<> 2019-02-06T071103.200.json
-
-###
-
-GET http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Accept: application/json
-
-<> 2019-02-06T071100.200.json
-
-###
-
-DELETE http://localhost:8080/api/v1/meal/1
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{}
-
-<> 2019-02-06T065509.400.json
-
-###
-
-DELETE http://localhost:8080/api/v1/meal/1
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{}
-
-<> 2019-02-06T065505.200.json
-
-###
-
-POST http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{
-  "name": "meal_one",
-  "displayName": "Awesome Meal",
-  "location": {
-    "city": "cologne",
-    "street": "bonner str.",
-    "houseNr": 222
-  }
-}
-
-<> 2019-02-06T065459.200.json
-
-###
-
-DELETE http://localhost:8080/api/v1/meal/1
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{}
-
-<> 2019-02-06T065323.200.json
-
-###
-
-POST http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{
-  "name": "meal_one",
-  "displayName": "Awesome Meal",
-  "location": {
-    "city": "cologne",
-    "street": "bonner str.",
-    "houseNr": 222
-  }
-}
-
-<> 2019-02-06T065317.200.json
-
-###
-
-DELETE http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{}
-
-<> 2019-02-06T065307.200.json
-
-###
-
-DELETE http://localhost:8080/api/v1/meal/2
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{}
-
-<> 2019-02-06T065300.400.json
-
-###
-
-DELETE http://localhost:8080/api/v1/meal/1
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{}
-
-<> 2019-02-06T065248.400.json
-
-###
-
-DELETE http://localhost:8080/api/v1/meal/1
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{}
-
-<> 2019-02-06T064851.500.json
-
-###
-
-DELETE http://localhost:8080/api/v1/meal/1
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{}
-
-<> 2019-02-06T064838.200.json
-
-###
-
-POST http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{
-  "name": "meal_one",
-  "displayName": "Awesome Meal",
-  "location": {
-    "city": "cologne",
-    "street": "bonner str.",
-    "houseNr": 222
-  }
-}
-
-<> 2019-02-06T064817.200.json
-
-###
-
-GET http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Accept: application/json
-
-<> 2019-02-06T064811.200.json
-
-###
-
-GET http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Accept: application/json
-
-<> 2019-02-06T062940.200.json
-
-###
-
-POST http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{
-  "name": "meal_one",
-  "displayName": "Awesome Meal",
-  "location": {
-    "city": "cologne",
-    "street": "bonner str.",
-    "houseNr": 222
-  }
-}
-
-<> 2019-02-06T062936.200.json
-
-###
-
-GET http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Accept: application/json
-
-<> 2019-02-06T062930.200.json
-
-###
-
-GET http://localhost:8080/api/v1/meal
-Accept: application/json
-
-<> 2019-02-06T062918.401.json
-
-###
-
-POST http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{
-  "name": "meal_one",
-  "displayName": "Awesome Meal",
-  "location": {
-    "city": "cologne",
-    "street": "bonner str.",
-    "houseNr": 222
-  }
-}
-
-<> 2019-02-06T062504.200.json
-
-###
-
-POST http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{
-  "name": "meal_one",
-  "displayName": "Awesome Meal",
-  "location": {
-    "city": "cologne",
-    "street": "bonner str.",
-    "houseNr": 222
-  }
-}
-
-###
-
-POST http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{
-  "name": "meal_one",
-  "displayName": "Awesome Meal",
-  "location": {
-    "city": "cologne",
-    "street": "bonner str.",
-    "houseNr": 222
-  }
-}
-
-<> 2019-02-06T062133.500.json
-
-###
-
-POST http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{
-  "name": "meal_one",
-  "displayName": "Awesome Meal",
-  "location": {
-    "city": "cologne",
-    "street": "bonner str.",
-    "houseNr": 222
-  }
-}
-
-<> 2019-02-06T062031.500.json
-
-###
-
-DELETE http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{}
-
-<> 2019-02-06T061024.200.json
-
-###
-
-PATCH http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{}
-
-<> 2019-02-06T061019.200.json
-
-###
-
-DELETE http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{}
-
-<> 2019-02-06T061015.200.json
-
-###
-
-DELETE http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{}
-
-<> 2019-02-06T060955.200.json
-
-###
-
-POST http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{}
-
-<> 2019-02-06T060932.200.json
-
-###
-
-POST http://localhost:8080/api/v1/meal
-Authorization: Basic dawid password
-Content-Type: application/json
-
-{}
-
-###
-
-POST http://localhost:8080/api/v1/meal
-Content-Type: application/json
-
-{}
-
-###
-
-GET http://localhost:8080/api/v1/login
+POST http://localhost:8080/api/v1/vote
 Authorization: Basic tobi password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+<> 2019-02-06T103927.200.json
+
+###
+
+GET http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
 Accept: application/json
 
-<> 2019-02-06T053609.200.json
+<> 2019-02-06T103921.200.json
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic tobi password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+<> 2019-02-06T103918.200.json
 
 ###
 
@@ -543,36 +57,467 @@ Content-Type: application/json
   "password": "password"
 }
 
-<> 2019-02-06T053604.200.json
+<> 2019-02-06T103906.200.json
 
 ###
 
-GET http://localhost:8080/api/v1/login
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+<> 2019-02-06T103848.200.json
+
+###
+
+GET http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Accept: application/json
+
+<> 2019-02-06T103822.200.json
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+<> 2019-02-06T103819.200.json
+
+###
+
+GET http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Accept: application/json
+
+<> 2019-02-06T103815.200.json
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+<> 2019-02-06T103809.200.json
+
+###
+
+GET http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Accept: application/json
+
+<> 2019-02-06T103805.200.json
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+<> 2019-02-06T103757.200.json
+
+###
+
+DELETE http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{}
+
+<> 2019-02-06T103733.200.json
+
+###
+
+DELETE http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{}
+
+<> 2019-02-06T103724.200.json
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+<> 2019-02-06T103658.200.json
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+<> 2019-02-06T103656.200.json
+
+###
+
+DELETE http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+
+{}
+
+<> 2019-02-06T103532.500.json
+
+###
+
+GET http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Accept: application/json
+
+<> 2019-02-06T103517.200.json
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+<> 2019-02-06T103347.200.json
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic hans password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+<> 2019-02-06T102208.200.json
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic hans password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+<> 2019-02-06T102203.200.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "hans",
+  "password": "password"
+}
+
+<> 2019-02-06T102154.200.json
+
+###
+
+GET http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Accept: application/json
+
+<> 2019-02-06T102137.200.json
+
+###
+
+POST http://localhost:8080/api/v1/vote
 Authorization: Basic tobi password
-Accept: application/json
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+<> 2019-02-06T102129.200.json
 
 ###
 
-GET http://localhost:8080/api/v1/login
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic tobi password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+<> 2019-02-06T102125.200.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "tobi",
+  "password": "password"
+}
+
+<> 2019-02-06T102113.200.json
+
+###
+
+GET http://localhost:8080/api/v1/vote
 Authorization: Basic dawid password
 Accept: application/json
 
-<> 2019-02-06T053506.200.json
+<> 2019-02-06T102050.200.json
 
 ###
 
-GET http://localhost:8080/api/v1/login
-Accept: application/json
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Content-Type: application/json
 
-<> 2019-02-06T053456.401.json
+{
+  "mealId": 1
+}
+
+<> 2019-02-06T102046.200.json
 
 ###
 
-GET http://localhost:8080/api/v1/login
+GET http://localhost:8080/api/v1/vote
 Authorization: Basic dawid password
 Accept: application/json
 
-<> 2019-02-06T053433.200.json
+<> 2019-02-06T102040.200.json
+
+###
+
+GET http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Accept: application/json
+
+<> 2019-02-06T101907.200.json
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+<> 2019-02-06T101904.200.json
+
+###
+
+GET http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Accept: application/json
+
+<> 2019-02-06T101858.200.json
+
+###
+
+GET http://localhost:8080/api/v1/vote
+Accept: application/json
+
+<> 2019-02-06T101848.401.json
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+<> 2019-02-06T101210.200.json
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+<> 2019-02-06T101143.200.json
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+<> 2019-02-06T101136.200.json
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic tobi password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic tobi password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic tobi password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+###
+
+POST http://localhost:8080/api/v1/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "tobi",
+  "password": "password"
+}
+
+<> 2019-02-06T100418.400.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "tobi",
+  "password": "password"
+}
+
+<> 2019-02-06T100400.200.json
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+###
+
+POST http://localhost:8080/api/v1/vote
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{
+  "mealId": 1
+}
+
+###
+
+GET http://localhost:8080/api/v1/meal
+Authorization: Basic dawid password
+Accept: application/json
+
+<> 2019-02-06T095630.200.json
 
 ###
 

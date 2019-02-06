@@ -20,7 +20,7 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     @JsonIgnore
-    private List<UserComment> comments;
+    private List<Comment> comments;
 
 
     @ManyToMany(fetch = FetchType.EAGER,cascade = {

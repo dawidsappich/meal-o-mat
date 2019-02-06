@@ -1,0 +1,24 @@
+GET {{host-url}}/vote
+Authorization: Basic dawid password
+Accept: application/json
+
+###
+
+
+POST {{host-url}}/vote
+Content-Type: application/json
+Authorization: Basic dawid password
+
+{
+  "mealId": 1
+}
+
+###
+
+DELETE {{host-url}}/vote
+Authorization: Basic dawid password
+Content-Type: application/json
+
+{}
+
+###
