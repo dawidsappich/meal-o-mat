@@ -6,24 +6,21 @@ Authorization: Basic dawid password
 
 ###
 
-# API UserController
-
-GET {{host-url}}/user/10
-Accept: application/json
-Authorization: Basic dawid password
-
-###
-
 # API RegisterController
 
 POST {{host-url}}/register
 Accept: application/json
-Authorization: Basic dawid password
 Content-Type: application/json
 
 {
-  "user": "hans",
+  "email": "tobi",
   "password": "password"
 }
+
+###
+
+GET {{host-url}}/login
+Authorization: Basic tobi password
+Accept: application/json
 
 ###

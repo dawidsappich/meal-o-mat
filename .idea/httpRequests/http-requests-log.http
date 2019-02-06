@@ -1,3 +1,348 @@
+GET http://localhost:8080/api/v1/login
+Authorization: Basic tobi password
+Accept: application/json
+
+<> 2019-02-06T053609.200.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "tobi",
+  "password": "password"
+}
+
+<> 2019-02-06T053604.200.json
+
+###
+
+GET http://localhost:8080/api/v1/login
+Authorization: Basic tobi password
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/v1/login
+Authorization: Basic dawid password
+Accept: application/json
+
+<> 2019-02-06T053506.200.json
+
+###
+
+GET http://localhost:8080/api/v1/login
+Accept: application/json
+
+<> 2019-02-06T053456.401.json
+
+###
+
+GET http://localhost:8080/api/v1/login
+Authorization: Basic dawid password
+Accept: application/json
+
+<> 2019-02-06T053433.200.json
+
+###
+
+GET http://localhost:8080/api/v1/login
+Authorization: Basic dawid password
+Accept: application/json
+
+<> 2019-02-06T053324.200.json
+
+###
+
+GET http://localhost:8080/api/v1/login
+Authorization: Basic dawid password
+Accept: application/json
+
+<> 2019-02-06T053147.405.json
+
+###
+
+POST http://localhost:8080/api/v1/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "dawid",
+  "password": "password"
+}
+
+<> 2019-02-06T043956.200.json
+
+###
+
+POST http://localhost:8080/api/v1/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "user": "dawid",
+  "password": "password"
+}
+
+<> 2019-02-06T043948.400.json
+
+###
+
+POST http://localhost:8080/api/v1/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "user": "dawid",
+  "password": "password"
+}
+
+<> 2019-02-06T043709.200.json
+
+###
+
+POST http://localhost:8080/api/v1/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "user": "dawid",
+  "password": "password"
+}
+
+###
+
+POST http://localhost:8080/api/v1/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "user": "dawid",
+  "password": "password"
+}
+
+###
+
+POST http://localhost:8080/api/v1/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "testtest",
+  "password": "password"
+}
+
+<> 2019-02-06T043404.200.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "parapa",
+  "password": "password"
+}
+
+<> 2019-02-06T043341.200.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "user": "hammel",
+  "password": "password"
+}
+
+<> 2019-02-06T043254.200.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "user": "hammel",
+  "password": "password"
+}
+
+<> 2019-02-06T043153.400.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "user": "tobi",
+  "password": "password"
+}
+
+<> 2019-02-06T043043.200.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "user": "tobi",
+  "password": "password"
+}
+
+<> 2019-02-06T042927.400.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "user": "joe",
+  "password": "password"
+}
+
+<> 2019-02-06T042915.400.json
+
+###
+
+POST http://localhost:8080/api/v1/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "user": "dawid",
+  "password": "password"
+}
+
+###
+
+POST http://localhost:8080/api/v1/login
+Authorization: Basic dawid password
+Content-Type: application/json
+Accept: application/json
+
+{
+  "user": "dawid",
+  "password": "password"
+}
+
+###
+
+POST http://localhost:8080/api/v1/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "user": "joe",
+  "password": "password"
+}
+
+<> 2019-02-06T042819.200.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "user": "joe",
+  "password": "password"
+}
+
+<> 2019-02-06T042748.400.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "user": "joe",
+  "password": "password"
+}
+
+<> 2019-02-06T042700.400.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "user": "peter",
+  "password": "password"
+}
+
+<> 2019-02-06T042622.400.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Authorization: Basic dawid password
+Accept: application/json
+Content-Type: application/json
+
+{
+  "user": "hans",
+  "password": "password"
+}
+
+<> 2019-02-06T042606.200.json
+
+###
+
+POST http://localhost:8080/api/v1/login
+Authorization: Basic dawid password
+Content-Type: application/json
+Accept: application/json
+
+{
+  "user": "dawid",
+  "password": "password"
+}
+
+###
+
+POST http://localhost:8080/api/v1/register
+Authorization: Basic dawid password
+Accept: application/json
+Content-Type: application/json
+
+{
+  "user": "hans",
+  "password": "password"
+}
+
+<> 2019-02-06T042512.400.json
+
+###
+
+POST http://localhost:8080/api/v1/login
+Authorization: Basic dawid password
+Content-Type: application/json
+Accept: application/json
+
+{
+  "user": "dawid",
+  "password": "password"
+}
+
+###
+
 GET http://localhost:8080/api/v1/user/10
 Authorization: Basic dawid password
 Accept: application/json

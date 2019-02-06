@@ -49,12 +49,7 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter {
 
     }
 
-    /**
-     * configure security to use our userservice
-     *
-     * @param auth AuthenticationManagerBuilder
-     * @throws Exception
-     */
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userService)
@@ -67,7 +62,7 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter {
     }
 
     /**
-     * Insert fist user
+     * insert fist user
      */
     @Bean
     @Transactional
