@@ -1,0 +1,19 @@
+[
+  {
+    "id": 10,
+    "dateVoted": "2019-02-17",
+    "meal": {
+      "id": 2,
+      "storeLocation": {
+        "storeId": 1,
+        "latitude": 50.567,
+        "longitude": 101.1111,
+        "city": "cologne",
+        "street": "bonner str.",
+        "houseNr": "222"
+      },
+      "name": "asia_meal",
+      "displayName": "My Asia"
+    }
+  }
+]

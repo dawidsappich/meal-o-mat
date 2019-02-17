@@ -11,6 +11,7 @@ import de.sappich.mealomat.services.UserDetailsServiceImpl;
 import de.sappich.mealomat.utils.ApplicationCode;
 import de.sappich.mealomat.utils.ApplicationResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
@@ -46,7 +47,7 @@ public class VoteController {
         return this.voteRepository.findAllByDateVoted(Date.valueOf(LocalDate.now()));
     }
 
-    @PostMapping
+    @PostMapping(consumes = "application/json")
     public ApplicationResponse createVote(@RequestBody VoteViewModel votemodel, Principal principal) {
         User user = getUser(principal);
 
@@ -57,7 +58,7 @@ public class VoteController {
         // if already voted then return
         ApplicationResponse.Builder builder = new ApplicationResponse.Builder();
         if (foundVotes.isPresent()) {
-            return ApplicationResponse.createResponse("user has already voted", ApplicationCode.ERROR);
+            return ApplicationResponse.createResponse("User has already voted", ApplicationCode.ERROR);
         }
 
 
@@ -69,14 +70,14 @@ public class VoteController {
 
         vote.setDateVoted(Date.valueOf(LocalDate.now()));
         voteRepository.save(vote);
-        return ApplicationResponse.createResponse("user has voted", ApplicationCode.OK);
+        return ApplicationResponse.createResponse("User has voted", ApplicationCode.OK);
     }
 
     @DeleteMapping
     public ApplicationResponse revokeVote(Principal principal) {
         User user = getUser(principal);
         this.voteRepository.deleteByUserAndDateVoted(user, Date.valueOf(LocalDate.now()));
-        return ApplicationResponse.createResponse("vote for today is revoked", ApplicationCode.OK);
+        return ApplicationResponse.createResponse("Vote for today is revoked", ApplicationCode.OK);
     }
 
     private User getUser(Principal principal) {
