@@ -20,7 +20,7 @@ public class LoginController {
 
         ApplicationResponse.Builder builder = new ApplicationResponse.Builder();
         ApplicationResponse response;
-        response = builder.setMessage("user found")
+        response = builder.setMessage("User found")
                 .setIsSuccess(true)
                 .setCode(ApplicationCode.OK)
                 .setTime(LocalDateTime.now())

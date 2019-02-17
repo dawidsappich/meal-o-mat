@@ -4,9 +4,9 @@ import de.sappich.mealomat.api.viewmodel.UserViewModel;
 import de.sappich.mealomat.entities.Authority;
 import de.sappich.mealomat.entities.User;
 import de.sappich.mealomat.repositories.UserRepository;
+import de.sappich.mealomat.services.UserDetailsServiceImpl;
 import de.sappich.mealomat.utils.ApplicationCode;
 import de.sappich.mealomat.utils.ApplicationResponse;
-import de.sappich.mealomat.services.UserDetailsServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,12 +45,12 @@ public class RegisterController {
             ApplicationResponse.Builder builder = new ApplicationResponse.Builder();
             ApplicationResponse response = builder.setCode(ApplicationCode.ERROR)
                     .setIsSuccess(false)
-                    .setMessage("user already exists!")
+                    .setMessage("User already exists!")
                     .setTime(LocalDateTime.now())
                     .build();
 
             return ResponseEntity
-                    .badRequest()
+                    .ok()
                     .contentType(MediaType.APPLICATION_JSON_UTF8)
                     .body(response);
         }
